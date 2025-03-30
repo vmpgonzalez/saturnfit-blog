@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { saveNewPost } from "../utils/localStorage";
+import { useNavigate } from "react-router-dom";
 
 export default function CreatePost() {
   const [formData, setFormData] = useState({
@@ -7,15 +9,25 @@ export default function CreatePost() {
     content: "",
   });
 
+  const navigate = useNavigate();
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("New post submitted! (Not yet saved to backend)");
-    console.log(formData);
-    // Later: Send to backend
+    const newPost = {
+      id: Date.now().toString(),
+      title: formData.title,
+      date: formData.date,
+      excerpt: formData.content.substring(0, 100) + "...",
+      content: `<p>${formData.content}</p>`,
+    };
+
+    saveNewPost(newPost);
+    alert("Post saved!"); // optional
+    navigate("/"); // go back to blog
   };
 
   return (

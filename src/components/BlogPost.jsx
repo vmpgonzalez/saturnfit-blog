@@ -1,13 +1,24 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import posts from "../data/posts";
+import { getStoredPosts, deletePost } from "../utils/localStorage";
 
 export default function BlogPost() {
   const { id } = useParams();
-  const post = posts.find((p) => p.id === id);
+  const navigate = useNavigate();
 
-  if (!post) {
-    return <p>Post not found</p>;
-  }
+  const stored = getStoredPosts();
+  const isLocalPost = stored.some((p) => p.id === id);
+  const allPosts = [...stored, ...posts];
+  const post = allPosts.find((p) => p.id === id);
+
+  const handleDelete = () => {
+    if (confirm("Are you sure you want to delete this post?")) {
+      deletePost(id);
+      navigate("/");
+    }
+  };
+
+  if (!post) return <p>Post not found</p>;
 
   return (
     <main>
@@ -16,6 +27,12 @@ export default function BlogPost() {
         <small>{post.date}</small>
       </p>
       <div dangerouslySetInnerHTML={{ __html: post.content }} />
+
+      {isLocalPost && (
+        <div style={{ marginTop: "20px" }}>
+          <button onClick={handleDelete}>🗑️ Delete Post</button>
+        </div>
+      )}
     </main>
   );
 }

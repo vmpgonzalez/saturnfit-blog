@@ -1,13 +1,15 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import BlogList from "./components/BlogList";
 import BlogPost from "./components/BlogPost";
 import CreatePost from "./components/CreatePost";
 
+const basename = "/saturnfit-blog";
+
 function App() {
   return (
-    <Router>
+    <BrowserRouter basename={basename}>
       <Header />
       <Routes>
         <Route path="/" element={<BlogList />} />
@@ -16,7 +18,7 @@ function App() {
         <Route path="/create" element={<CreatePost />} />
       </Routes>
       <Footer />
-    </Router>
+    </BrowserRouter>
   );
 }
 
