@@ -31,6 +31,12 @@ export default function BlogPost() {
       {isLocalPost && (
         <div style={{ marginTop: "20px" }}>
           <button onClick={handleDelete}>🗑️ Delete Post</button>
+          <button
+            onClick={() => navigate(`/edit/${id}`)}
+            style={{ marginLeft: "10px" }}
+          >
+            ✏️ Edit Post
+          </button>
         </div>
       )}
     </main>

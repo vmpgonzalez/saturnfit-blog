@@ -1,12 +1,72 @@
-# React + Vite
+# SaturnFit Blog 🪐
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive React-based blog platform built for holistic health, wellness, and fitness content. Users can create, edit, and delete posts, with all data stored in the browser using `localStorage`.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## Expanding the ESLint configuration
+- ✅ Create new blog posts
+- ✅ View individual post pages
+- ✅ Edit and delete your own posts
+- ✅ Posts persist via `localStorage`
+- ✅ Responsive routes using React Router
+- ✅ Live deployment on GitHub Pages
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📸 Preview
+
+![screenshot](public/screenshot-placeholder.png) <!-- Replace with an actual screenshot later -->
+
+---
+
+## 🚀 Live Site
+
+🌐 [Visit the live SaturnFit Blog](https://victorpachecogonzalez.github.io/saturnfit-blog/)
+
+---
+
+## 🛠️ Tech Stack
+
+- **React** + Vite
+- **React Router DOM**
+- **LocalStorage** for persistence
+- **GitHub Pages** for deployment
+
+---
+
+## 📂 Project Structure
+
+saturnfit-blog/
+├── public/
+│ └── favicon.png
+├── src/
+│ ├── components/
+│ │ ├── Header.jsx
+│ │ ├── Footer.jsx
+│ │ ├── BlogList.jsx
+│ │ ├── BlogPost.jsx
+│ │ └── CreatePost.jsx
+│ ├── data/
+│ │ └── posts.js
+│ ├── utils/
+│ │ └── localStorage.js
+│ ├── App.jsx
+│ └── main.jsx
+├── index.html
+├── vite.config.js
+└── README.md
+
+---
+
+## 🧪 Local Development
+
+Clone the repo and run locally:
+
+```bash
+git clone https://github.com/victorpachecogonzalez/saturnfit-blog.git
+cd saturnfit-blog
+npm install
+npm run dev
+```

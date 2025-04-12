@@ -16,3 +16,11 @@ export function deletePost(id) {
   const filtered = existing.filter((post) => post.id !== id);
   localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(filtered));
 }
+
+export function updatePost(updatedPost) {
+  const posts = getStoredPosts();
+  const newPosts = posts.map((post) =>
+    post.id === updatedPost.id ? updatedPost : post
+  );
+  localStorage.setItem("saturnfit-posts", JSON.stringify(newPosts));
+}
