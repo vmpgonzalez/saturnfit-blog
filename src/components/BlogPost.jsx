@@ -1,5 +1,4 @@
 import { useParams, useNavigate } from "react-router-dom";
-import posts from "../data/posts";
 import { getStoredPosts, deletePost } from "../utils/localStorage";
 
 export default function BlogPost() {
@@ -8,7 +7,7 @@ export default function BlogPost() {
 
   const stored = getStoredPosts();
   const isLocalPost = stored.some((p) => p.id === id);
-  const allPosts = [...stored, ...posts];
+  const allPosts = [...storedPosts];
   const post = allPosts.find((p) => p.id === id);
 
   const handleDelete = () => {
