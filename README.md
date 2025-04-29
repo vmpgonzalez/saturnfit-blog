@@ -1,38 +1,28 @@
 # SaturnFit Blog 🪐
 
-A responsive React-based blog platform built for holistic health, wellness, and fitness content. Users can create, edit, and delete posts, with all data stored in the browser using `localStorage`.
+Welcome to the SaturnFit Blog — a clean, responsive, and minimal health & wellness blog built with **React**, styled with custom CSS, and deployed on **GitHub Pages**.
 
----
-
-## ✨ Features
-
-- ✅ Create new blog posts
-- ✅ View individual post pages
-- ✅ Edit and delete your own posts
-- ✅ Posts persist via `localStorage`
-- ✅ Responsive routes using React Router
-- ✅ Live deployment on GitHub Pages
-
----
-
-## 📸 Preview
-
-![screenshot](public/screenshot-placeholder.png) <!-- Replace with an actual screenshot later -->
+This blog is part of the SaturnFit ecosystem: focused on holistic fitness, mindset, and personal growth.
 
 ---
 
 ## 🚀 Live Site
 
-🌐 [Visit the live SaturnFit Blog](https://victorpachecogonzalez.github.io/saturnfit-blog/)
+👉 [https://vmpgonzalez.github.io/saturnfit-blog/](https://vmpgonzalez.github.io/saturnfit-blog/)
+
+The site loads with a pinned welcome post and additional articles preloaded for all new visitors.
 
 ---
 
-## 🛠️ Tech Stack
+## ✨ Features
 
-- **React** + Vite
-- **React Router DOM**
-- **LocalStorage** for persistence
-- **GitHub Pages** for deployment
+- 📝 Create, edit, and delete blog posts (stored in `localStorage`)
+- 📌 Pinned posts appear at the top
+- 🖼️ Custom logo and favicon
+- 🎨 Clean UI with card-style layout
+- 🔁 Responsive mobile-friendly design
+- 🔒 Fully client-side (no backend yet)
+- 🌐 GitHub Pages deployment
 
 ---
 
@@ -40,6 +30,7 @@ A responsive React-based blog platform built for holistic health, wellness, and 
 
 saturnfit-blog/
 ├── public/
+│ ├── logo.png
 │ └── favicon.png
 ├── src/
 │ ├── components/
@@ -48,24 +39,21 @@ saturnfit-blog/
 │ │ ├── BlogList.jsx
 │ │ ├── BlogPost.jsx
 │ │ └── CreatePost.jsx
-│ ├── data/
-│ │ └── posts.js
 │ ├── utils/
 │ │ └── localStorage.js
 │ ├── App.jsx
-│ └── main.jsx
-├── index.html
+│ ├── main.jsx
+│ └── index.css
 ├── vite.config.js
+├── index.html
 └── README.md
 
 ---
 
 ## 🧪 Local Development
 
-Clone the repo and run locally:
-
 ```bash
-git clone https://github.com/victorpachecogonzalez/saturnfit-blog.git
+git clone https://github.com/vmpgonzalez/saturnfit-blog.git
 cd saturnfit-blog
 npm install
 npm run dev
