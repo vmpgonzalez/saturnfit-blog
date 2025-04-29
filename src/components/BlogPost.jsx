@@ -6,9 +6,7 @@ export default function BlogPost() {
   const navigate = useNavigate();
 
   const stored = getStoredPosts();
-  const isLocalPost = stored.some((p) => p.id === id);
-  const allPosts = [...storedPosts];
-  const post = allPosts.find((p) => p.id === id);
+  const post = stored.find((p) => p.id === id); // ✅ corrected here
 
   const handleDelete = () => {
     if (confirm("Are you sure you want to delete this post?")) {
@@ -27,17 +25,14 @@ export default function BlogPost() {
       </p>
       <div dangerouslySetInnerHTML={{ __html: post.content }} />
 
-      {isLocalPost && (
-        <div style={{ marginTop: "20px" }}>
-          <button onClick={handleDelete}>🗑️ Delete Post</button>
-          <button
-            onClick={() => navigate(`/edit/${id}`)}
-            style={{ marginLeft: "10px" }}
-          >
-            ✏️ Edit Post
-          </button>
-        </div>
-      )}
+      <div style={{ marginTop: "20px" }}>
+        <button onClick={handleDelete}>🗑️ Delete Post</button>
+        {post.pinned && (
+          <span style={{ marginLeft: "10px", color: "#eab308" }}>
+            📌 Pinned
+          </span>
+        )}
+      </div>
     </main>
   );
 }
